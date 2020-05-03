@@ -28,7 +28,24 @@ export default class Todo extends Component {
                         </CardBody>
                     </Card>
                 </div>
-                <div className='col-12 col-md-6 p-2 '>
+                <div className='col-12 col-md-6  p-2 '>
+                    <Card>
+                        <CardHeader>
+                            Heading
+                            <span className='float-right'>
+                                <Button color='danger'>X</Button>
+                            </span>
+                        </CardHeader>
+                        <CardBody>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Mollitia vitae iusto adipisci velit error nam
+                            Lorem, ipsum dolor sit amet cons consectetur,
+                            repellendus reprehenderit consequatur id qui numquam
+                            tenetur ipsa perferendis aut.
+                        </CardBody>
+                    </Card>
+                </div>
+                <div className='col-12 col-md-6  p-2 '>
                     <Card>
                         <CardHeader>
                             Heading
@@ -42,7 +59,21 @@ export default class Todo extends Component {
                         </CardBody>
                     </Card>
                 </div>
-                <div className='col-12 col-md-6 p-2 '>
+                <div className='col-12 col-md-6  p-2 '>
+                    <Card>
+                        <CardHeader>
+                            Heading
+                            <span className='float-right'>
+                                <Button color='danger'>X</Button>
+                            </span>
+                        </CardHeader>
+                        <CardBody>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Mollitia vitae iusto adipisci velit error nam
+                        </CardBody>
+                    </Card>
+                </div>
+                <div className='col-12 col-md-6  p-2 '>
                     <Card>
                         <CardHeader>
                             Heading
@@ -58,7 +89,7 @@ export default class Todo extends Component {
                         </CardBody>
                     </Card>
                 </div>
-                <div className='col-12 col-md-6 p-2 '>
+                <div className='col-12 col-md-6  p-2 '>
                     <Card>
                         <CardHeader>
                             Heading
