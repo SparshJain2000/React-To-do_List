@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import {
-    Card,
-    CardHeader,
+    // Card,x
     Button,
     Modal,
     ModalHeader,
@@ -10,12 +9,17 @@ import {
     FormGroup,
     Label,
     Input,
-    ModalFooter,
+    // ModalFooter,
 } from "reactstrap";
 export default class AddComponent extends Component {
     constructor(props) {
         super(props);
-        this.state = { isModalOpen: false };
+        this.state = {
+            // heading: "",
+            // description: "",
+            isModalOpen: false,
+        };
+
         this.toggleModal = this.toggleModal.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -24,9 +28,11 @@ export default class AddComponent extends Component {
             isModalOpen: !this.state.isModalOpen,
         });
     }
+
     handleSubmit(event) {
-        console.log(this.username);
-        alert(this.username.value);
+        alert(this.heading.value + "\n" + this.description.value);
+        event.preventDefault();
+        this.toggleModal();
     }
     render() {
         return (
@@ -62,9 +68,9 @@ export default class AddComponent extends Component {
                                 <Input
                                     type='text'
                                     name='heading'
-                                    innerRef={(input) =>
-                                        (this.username = input)
-                                    }
+                                    // value={this.state.heading}
+                                    // onChange={this.handleChange}
+                                    innerRef={(input) => (this.heading = input)}
                                 />
                             </FormGroup>
                             <FormGroup>
@@ -75,6 +81,8 @@ export default class AddComponent extends Component {
                                     innerRef={(input) =>
                                         (this.description = input)
                                     }
+                                    // value={this.state.description}
+                                    // onChange={this.handleChange}
                                 />
                             </FormGroup>
                             <FormGroup>
