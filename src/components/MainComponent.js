@@ -1,7 +1,19 @@
 import React, { Component } from "react";
 import Todo from "./TodoComponent";
 import AddComponent from "./AddComponent";
-export default class Main extends Component {
+import { connect } from "react-redux";
+// import { ITEMS } from "../shared/items";
+import { addItem, delItem } from "../redux/ActionCreators";
+const mapStateToProps = (state) => {
+    return {
+        items: state.items,
+    };
+};
+const mapDispatchToProps = (dispatch) => ({
+    addItem: (heading, description) => dispatch(addItem(heading, description)),
+    delItem: (id) => dispatch(delItem(id)),
+});
+class Main extends Component {
     render() {
         return (
             <div
@@ -19,10 +31,17 @@ export default class Main extends Component {
                         backgroundColor: "rgba(255,255,255,.3)",
                         borderRadius: "2rem",
                     }}>
-                    <AddComponent />
-                    <Todo />
+                    <AddComponent
+                        items={this.props.items}
+                        addItem={this.props.addItem}
+                    />
+                    <Todo
+                        items={this.props.items}
+                        delItem={this.props.delItem}
+                    />
                 </div>
             </div>
         );
     }
 }
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

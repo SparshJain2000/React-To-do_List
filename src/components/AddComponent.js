@@ -5,12 +5,13 @@ import {
     Modal,
     ModalHeader,
     ModalBody,
-    Form,
-    FormGroup,
     Label,
-    Input,
-    // ModalFooter,
+    Row,
+    Col,
+    // ModColalFooter,
 } from "reactstrap";
+import { LocalForm, Control } from "react-redux-form";
+// import { ITEMS } from "../shared/items";
 export default class AddComponent extends Component {
     constructor(props) {
         super(props);
@@ -29,10 +30,12 @@ export default class AddComponent extends Component {
         });
     }
 
-    handleSubmit(event) {
-        alert(this.heading.value + "\n" + this.description.value);
-        event.preventDefault();
+    handleSubmit(values) {
+        // console.log(this.heading.value + "\n" + this.description.value);
         this.toggleModal();
+        this.props.addItem(values.heading, values.description);
+        // event.preventDefault();
+        // this.toggleModal();
     }
     render() {
         return (
@@ -62,9 +65,13 @@ export default class AddComponent extends Component {
                         Add a Item
                     </ModalHeader>
                     <ModalBody>
-                        <Form onSubmit={this.handleSubmit}>
-                            <FormGroup>
-                                <Label htmlFor='heading'>Heading</Label>
+                        <LocalForm onSubmit={this.handleSubmit}>
+                            <Row className='form-group'>
+                                <Label htmlFor='heading' md={12}>
+                                    Heading
+                                </Label>
+                                {/* <FormGroup>
+                                
                                 <Input
                                     type='text'
                                     name='heading'
@@ -72,29 +79,37 @@ export default class AddComponent extends Component {
                                     // onChange={this.handleChange}
                                     innerRef={(input) => (this.heading = input)}
                                 />
-                            </FormGroup>
-                            <FormGroup>
-                                <Label htmlFor='description'>Description</Label>
-                                <Input
-                                    type='textarea'
-                                    name='description'
-                                    innerRef={(input) =>
-                                        (this.description = input)
-                                    }
-                                    // value={this.state.description}
-                                    // onChange={this.handleChange}
-                                />
-                            </FormGroup>
-                            <FormGroup>
-                                <Button
-                                    className='text-white'
-                                    color='warning'
-                                    type='submit'
-                                    value='submit'>
-                                    Add
-                                </Button>
-                            </FormGroup>
-                        </Form>
+                            </FormGroup> */}
+                                <Col md={12}>
+                                    <Control.text
+                                        model='.heading'
+                                        className='form-control'
+                                    />
+                                </Col>
+                            </Row>
+                            <Row className='form-group'>
+                                <Col md={12}>
+                                    <Label htmlFor='description'>
+                                        Description
+                                    </Label>
+                                </Col>
+                                <Col md={12}>
+                                    <Control.textarea
+                                        className='form-control'
+                                        model='.description'
+                                        // value={this.state.description}
+                                        // onChange={this.handleChange}
+                                    />
+                                </Col>
+                            </Row>
+                            <Button
+                                className='text-white'
+                                color='warning'
+                                type='submit'
+                                value='submit'>
+                                Add
+                            </Button>
+                        </LocalForm>
                     </ModalBody>
                 </Modal>
             </div>
