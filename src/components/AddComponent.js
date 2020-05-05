@@ -58,19 +58,20 @@ export default class AddComponent extends Component {
                         </span>
                     </Button>
                 </div>
-                <Modal
-                    isOpen={this.state.isModalOpen}
-                    toggle={this.toggleModal}>
-                    <ModalHeader toggle={this.toggleModal}>
-                        Add a Item
-                    </ModalHeader>
-                    <ModalBody>
-                        <LocalForm onSubmit={this.handleSubmit}>
-                            <Row className='form-group'>
-                                <Label htmlFor='heading' md={12}>
-                                    Heading
-                                </Label>
-                                {/* <FormGroup>
+                <div>
+                    <Modal
+                        isOpen={this.state.isModalOpen}
+                        toggle={this.toggleModal}>
+                        <ModalHeader toggle={this.toggleModal}>
+                            Add a Item
+                        </ModalHeader>
+                        <ModalBody>
+                            <LocalForm onSubmit={this.handleSubmit}>
+                                <Row className='form-group'>
+                                    <Label htmlFor='heading' md={12}>
+                                        Heading
+                                    </Label>
+                                    {/* <FormGroup>
                                 
                                 <Input
                                     type='text'
@@ -80,38 +81,39 @@ export default class AddComponent extends Component {
                                     innerRef={(input) => (this.heading = input)}
                                 />
                             </FormGroup> */}
-                                <Col md={12}>
-                                    <Control.text
-                                        model='.heading'
-                                        className='form-control'
-                                    />
-                                </Col>
-                            </Row>
-                            <Row className='form-group'>
-                                <Col md={12}>
-                                    <Label htmlFor='description'>
-                                        Description
-                                    </Label>
-                                </Col>
-                                <Col md={12}>
-                                    <Control.textarea
-                                        className='form-control'
-                                        model='.description'
-                                        // value={this.state.description}
-                                        // onChange={this.handleChange}
-                                    />
-                                </Col>
-                            </Row>
-                            <Button
-                                className='text-white'
-                                color='warning'
-                                type='submit'
-                                value='submit'>
-                                Add
-                            </Button>
-                        </LocalForm>
-                    </ModalBody>
-                </Modal>
+                                    <Col md={12}>
+                                        <Control.text
+                                            model='.heading'
+                                            className='form-control'
+                                        />
+                                    </Col>
+                                </Row>
+                                <Row className='form-group'>
+                                    <Col md={12}>
+                                        <Label htmlFor='description'>
+                                            Description
+                                        </Label>
+                                    </Col>
+                                    <Col md={12}>
+                                        <Control.textarea
+                                            className='form-control'
+                                            model='.description'
+                                            // value={this.state.description}
+                                            // onChange={this.handleChange}
+                                        />
+                                    </Col>
+                                </Row>
+                                <Button
+                                    className='text-white'
+                                    color='warning'
+                                    type='submit'
+                                    value='submit'>
+                                    Add
+                                </Button>
+                            </LocalForm>
+                        </ModalBody>
+                    </Modal>
+                </div>
             </div>
         );
     }

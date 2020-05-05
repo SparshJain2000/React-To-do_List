@@ -6,6 +6,7 @@ export const addItem = (heading, description) => ({
     payload: {
         heading: heading,
         description: description,
+        date: new Date().toISOString(),
     },
 });
 export const delItem = (id) => ({
