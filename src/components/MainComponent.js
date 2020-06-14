@@ -21,6 +21,7 @@ class Main extends Component {
         const user = this.props.user,
             signOut = this.props.signOut,
             signInWithGoogle = this.props.signInWithGoogle;
+        console.log(process.env);
         console.log(user);
         return (
             <div>

@@ -1,9 +1,9 @@
 const config = {
-    apiKey: "AIzaSyAy8bDShPob2H2I7SyRPhbJZnjqkws5HBg",
-    authDomain: "to-do-list-dfa22.firebaseapp.com",
-    databaseURL: "https://to-do-list-dfa22.firebaseio.com",
-    projectId: "to-do-list-dfa22",
-    storageBucket: "to-do-list-dfa22.appspot.com",
-    messagingSenderId: "547448404622",
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    databaseURL: process.env.REACT_APP_databaseURL,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
 };
 export default config;
